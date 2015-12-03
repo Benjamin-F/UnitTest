@@ -1,7 +1,6 @@
 package stack;
 
 import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,6 +41,14 @@ public class StackTest {
 	@Test
 	public void testNbElem(){
 		assertEquals(0, myStack.getNumberOfElements());
+	}
+	
+	/**
+	 * Test isEmpty
+	 */
+	@Test
+	public void testIsEmpty(){
+		assertEquals(true, myStack.isEmpty());
 	}
 	
 	/**
@@ -94,14 +101,6 @@ public class StackTest {
 	public void testPop(){
 		myStack.push(4);
 		myStack.pop();
-		assertEquals(true, myStack.isEmpty());
-	}
-	
-	/**
-	 * Test isEmpty
-	 */
-	@Test
-	public void testIsEmpty(){
 		assertEquals(true, myStack.isEmpty());
 	}
 	
