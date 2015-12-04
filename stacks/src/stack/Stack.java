@@ -22,14 +22,6 @@ public class Stack {
 	}
 	
 	/**
-	 * Return array size
-	 * @return size
-	 */
-	public int getSize(){
-		return stackArray.length;
-	}
-	
-	/**
 	 * Return the number of elements in the array
 	 * @return number of elements
 	 */
@@ -122,6 +114,16 @@ public class Stack {
 		return headInt;
 	}
 	
+	/*Getters*/
+	public Integer[] getStackArray() {
+		return stackArray;
+	}
+	
+	public int getSize(){
+		return stackArray.length;
+	}
+	
+	/*Overrides*/
 	@Override
 	public String toString() {
 		return "Stack [stackArray=" + Arrays.toString(stackArray) + ", size=" + size + "]";
