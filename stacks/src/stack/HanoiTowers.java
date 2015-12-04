@@ -30,11 +30,11 @@ public class HanoiTowers {
 	 * @param inter
 	 * @param to
 	 */
-	public void solve(int number, Stack from, Stack inter, Stack to) {
+	public void solve(int number, Stack from, Stack via, Stack to) {
 		if (number > 0){
-			solve(number - 1, from, to, inter);
+			solve(number - 1, from, to, via);
 			moveDisk(from,to);
-			solve(number - 1, inter, from, to);
+			solve(number - 1, via, from, to);
 		}
 	}
 	
