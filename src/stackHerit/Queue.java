@@ -2,7 +2,7 @@ package stackHerit;
 
 import stackOrig.Stack;
 
-public class Queue extends Storage{
+public class Queue{
 	private Stack stackBegin = null;
 	private Stack stackEnd = null;
 	
@@ -11,50 +11,29 @@ public class Queue extends Storage{
 	 * @param s Stack size
 	 */
 	public Queue(int s){
-		super(s);
+		stackBegin = new Stack(s);
+		stackEnd = new Stack(s);
 	}
 	
 	/**
 	 * Enqueue
 	 */
-	public void push(){
+	public void push(int x){
 		//If empty stack, exception
-		if(stackBegin.isEmpty())
-			throw new IllegalStateException("La pile de début est vide!");
+		if(stackBegin.isFull())
+			throw new IllegalStateException("La pile de début est pleine!");
 		
-		//If full queue, exception
-		if(isFull())
-			throw new IllegalStateException("La file d'attente est pleine!");
-		
-		//Go through queue
-		for(int i=0; i<stackArray.length; i++){
-			//First null element
-			if(stackArray[i] == null){
-				//Enqueue
-				stackArray[i] = stackBegin.head();
-				stackBegin.pop();
-				break;
-			}
-		}
+		stackBegin.push(x);
 	}
 
 	/**
 	 * Dequeue
 	 */
 	public void pop(){
-		//If stack full, exception
-		if(stackEnd.isFull())
-			throw new IllegalStateException("La pile de fin est pleine!");
-		
-		//If queue empty, exception
-		if(isEmpty())
-			throw new IllegalStateException("La file d'attente est vide!");
-		
-		//Dequeue
-		stackEnd.push(stackArray[0]);
-		
-		//Move elements
-		for(int i=1; i<stackArray.length; i++){
-			stackArray[i-1] = stackArray[i];
+		for(int i = 0; i<stackBegin.getNumberOfElements()-1; i++){
+			stackEnd.push(stackBegin.head());
 		}
+		
+		stackEnd.pop();
+	}
 }
