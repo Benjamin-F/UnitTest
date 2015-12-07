@@ -1,4 +1,4 @@
-package stackOrig;
+package stack;
 
 public class HanoiTowers {
 	private Stack leftStack = null;

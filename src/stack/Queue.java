@@ -1,11 +1,9 @@
-package stackHerit;
-
-import stackOrig.Stack;
+package stack;
 
 public class Queue{
 	private Stack stackBegin = null;
 	private Stack stackEnd = null;
-	
+
 	/**
 	 * Constructor
 	 * @param s Stack size
@@ -30,10 +28,21 @@ public class Queue{
 	 * Dequeue
 	 */
 	public void pop(){
-		for(int i = 0; i<stackBegin.getNumberOfElements()-1; i++){
+		
+		for(int i = 0 ; i < stackBegin.getNumberOfElements(); i++){
 			stackEnd.push(stackBegin.head());
+			stackBegin.pop();
 		}
 		
 		stackEnd.pop();
+	}
+	
+	/* Getters */
+	public Stack getStackBegin() {
+		return stackBegin;
+	}
+
+	public Stack getStackEnd() {
+		return stackEnd;
 	}
 }
