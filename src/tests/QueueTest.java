@@ -65,4 +65,17 @@ public class QueueTest {
 		assertEquals(true, myQueue.getStackBegin().isEmpty());
 		assertEquals(true, myQueue.getStackEnd().isEmpty());
 	}
+	
+	/**
+	 * Test LIFO
+	 */
+	@Test
+	public void testLIFO(){
+		myQueue.push(1);
+		myQueue.push(2);
+		myQueue.pop();
+		//assertEquals(1, (int)myQueue.get);
+		//assertEquals(null, myQueue.getStackArray()[1]);
+		//assertEquals(1, (int)myQueue.getStackArray()[0]);
+	}
 }
