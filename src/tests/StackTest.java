@@ -122,4 +122,16 @@ public class StackTest {
 		myStack.push(3);
 		assertEquals(3, myStack.head());
 	}
+	
+	/**
+	 * Test LIFO
+	 */
+	@Test
+	public void testLIFO(){
+		myStack.push(1);
+		myStack.push(2);
+		myStack.pop();
+		assertEquals(1, (int)myStack.getStackArray()[0]);
+		assertEquals(null, myStack.getStackArray()[1]);
+	}
 }
