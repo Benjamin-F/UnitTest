@@ -34,9 +34,9 @@ public class QueueTest {
 	@Test
 	public void testPush(){
 		myQueue.push(5);
-		assertEquals(false, myQueue.getStackBegin().isEmpty());
-		assertEquals(1, myQueue.getStackBegin().getNumberOfElements());
-		assertEquals(5, myQueue.getStackBegin().head());
+		assertEquals(false, myQueue.getStack().isEmpty());
+		assertEquals(1, myQueue.getStack().getNumberOfElements());
+		assertEquals(5, myQueue.getStack().head());
 	}
 	
 	
@@ -62,20 +62,21 @@ public class QueueTest {
 		myQueue.push(3);
 		myQueue.pop();
 		myQueue.pop();
-		assertEquals(true, myQueue.getStackBegin().isEmpty());
-		assertEquals(true, myQueue.getStackEnd().isEmpty());
+		
+		assertEquals(true, myQueue.getStack().isEmpty());
+		assertEquals(true, myQueue.getStackTmp().isEmpty());
 	}
 	
 	/**
-	 * Test LIFO
+	 * Test FIFO
 	 */
 	@Test
-	public void testLIFO(){
+	public void testFIFO(){
 		myQueue.push(1);
 		myQueue.push(2);
 		myQueue.pop();
-		//assertEquals(1, (int)myQueue.get);
-		//assertEquals(null, myQueue.getStackArray()[1]);
-		//assertEquals(1, (int)myQueue.getStackArray()[0]);
+		
+		assertEquals(2, (int)myQueue.getStack().getStackArray()[0]);
+		assertEquals(1, (int)myQueue.getStack().getNumberOfElements());
 	}
 }

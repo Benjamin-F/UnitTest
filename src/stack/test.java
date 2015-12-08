@@ -13,16 +13,16 @@ public class test {
 		
 		int i=0;
 		String tmp = null;
-		for(; i<q.getStackBegin().getSize(); i++){
-			tmp = (q.getStackBegin().getStackArray()[i] == null)? "-": q.getStackBegin().getStackArray()[i].toString();
+		for(; i<q.getStack().getSize(); i++){
+			tmp = (q.getStack().getStackArray()[i] == null)? "-": q.getStack().getStackArray()[i].toString();
 			
 			System.out.print(tmp + "|");
 		}
 		System.out.println("");
 		
 		i=0;
-		for(; i<q.getStackEnd().getSize(); i++){
-			tmp = (q.getStackEnd().getStackArray()[i] == null)? "-": q.getStackEnd().getStackArray()[i].toString();
+		for(; i<q.getStackTmp().getSize(); i++){
+			tmp = (q.getStackTmp().getStackArray()[i] == null)? "-": q.getStackTmp().getStackArray()[i].toString();
 			
 			System.out.print(tmp + '|');
 		}

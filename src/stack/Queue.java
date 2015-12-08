@@ -1,18 +1,16 @@
 package stack;
 
 public class Queue{
-	private Stack stackBegin = null;
-	private Stack stackEnd = null;
-	private Stack tmp = null;
+	private Stack stack = null;
+	private Stack stackTmp = null;
 
 	/**
 	 * Constructor
 	 * @param s Stack size
 	 */
 	public Queue(int s){
-		stackBegin = new Stack(s);
-		stackEnd = new Stack(s);
-		tmp = new Stack(s);
+		stack = new Stack(s);
+		stackTmp = new Stack(s);
 	}
 	
 	/**
@@ -20,16 +18,17 @@ public class Queue{
 	 */
 	public void push(int x){
 		//If empty stack, exception
-		if(stackBegin.isFull())
+		if(stack.isFull())
 			throw new IllegalStateException("La pile de début est pleine!");
 		
-		stackBegin.push(x);
+		stack.push(x);
 	}
 
 	/**
 	 * Dequeue
 	 */
 	public void pop(){
+		/*
 		if(stackEnd.isEmpty()){
 			while(!stackBegin.isEmpty()){
 				stackEnd.push(stackBegin.head());
@@ -59,14 +58,30 @@ public class Queue{
 			
 			stackEnd.pop();
 		}
+		*/
+		
+		//Push Begin into end
+		while(!stack.isEmpty()){
+			stackTmp.push(stack.head());
+			stack.pop();
+		}
+		
+		stackTmp.pop();
+		
+		//Push End into begin
+		while(!stackTmp.isEmpty()){
+			stack.push(stackTmp.head());
+			stackTmp.pop();
+		}
+		
 	}
 	
 	/* Getters */
-	public Stack getStackBegin() {
-		return stackBegin;
+	public Stack getStack() {
+		return stack;
 	}
 
-	public Stack getStackEnd() {
-		return stackEnd;
+	public Stack getStackTmp() {
+		return stackTmp;
 	}
 }
