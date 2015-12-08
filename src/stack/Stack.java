@@ -122,35 +122,4 @@ public class Stack {
 	public int getSize(){
 		return stackArray.length;
 	}
-	
-	/*Overrides*/
-	@Override
-	public String toString() {
-		return "Stack [stackArray=" + Arrays.toString(stackArray) + ", size=" + size + "]";
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + size;
-		result = prime * result + Arrays.hashCode(stackArray);
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Stack other = (Stack) obj;
-		if (size != other.size)
-			return false;
-		if (!Arrays.equals(stackArray, other.stackArray))
-			return false;
-		return true;
-	}
 }

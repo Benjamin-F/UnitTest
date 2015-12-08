@@ -14,7 +14,7 @@ public class StackTest {
 	@Before
 	public void setUp(){
 		myStack = new Stack(5);
-	}
+	} 
 	
 	@After
 	public void tearDown(){

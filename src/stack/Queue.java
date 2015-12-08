@@ -28,47 +28,16 @@ public class Queue{
 	 * Dequeue
 	 */
 	public void pop(){
-		/*
-		if(stackEnd.isEmpty()){
-			while(!stackBegin.isEmpty()){
-				stackEnd.push(stackBegin.head());
-				stackBegin.pop();
-			}
-			
-			stackEnd.pop();
-		}else{
-			
-			//Store end into tmp
-			while(!stackEnd.isEmpty()){
-				tmp.push(stackEnd.head());
-				stackEnd.pop();
-			}
-			
-			//Push Begin into end
-			while(!stackBegin.isEmpty()){
-				stackEnd.push(stackBegin.head());
-				stackBegin.pop();
-			}
-			
-			//Push tmp on top of the end stack
-			while(!tmp.isEmpty()){
-				stackEnd.push(tmp.head());
-				tmp.pop();
-			}			
-			
-			stackEnd.pop();
-		}
-		*/
-		
-		//Push Begin into end
+		//Push stack into tmp
 		while(!stack.isEmpty()){
 			stackTmp.push(stack.head());
 			stack.pop();
 		}
 		
+		//Pop the element
 		stackTmp.pop();
 		
-		//Push End into begin
+		//Push tmp into stack
 		while(!stackTmp.isEmpty()){
 			stack.push(stackTmp.head());
 			stackTmp.pop();
