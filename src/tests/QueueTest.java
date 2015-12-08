@@ -54,9 +54,9 @@ public class QueueTest {
 	}
 	
 	/**
-	 * Test full queue enqueue
+	 * Test full
 	 */
-	@Test(expected=IllegalStateException.class)
+	@Test
 	public void testIsFull(){
 		myQueue.push(1);
 		myQueue.push(2);
