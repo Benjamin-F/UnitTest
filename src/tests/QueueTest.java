@@ -54,6 +54,27 @@ public class QueueTest {
 	}
 	
 	/**
+	 * Test full queue enqueue
+	 */
+	@Test(expected=IllegalStateException.class)
+	public void testIsFull(){
+		myQueue.push(1);
+		myQueue.push(2);
+		myQueue.push(3);
+		myQueue.push(4);
+		myQueue.push(5);
+		assertEquals(true, myQueue.isFull());
+	}
+	
+	/**
+	 * Test getStackTmp
+	 */
+	@Test
+	public void testGetStackTmp(){
+		assertEquals(true, myQueue.getStackTmp().isEmpty());
+	}
+	
+	/**
 	 * Test dequeue
 	 */
 	@Test

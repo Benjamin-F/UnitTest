@@ -81,15 +81,6 @@ public class Queue{
 	public Integer[] getStackArray() {
 		return stack.getStackArray();
 	}
-	
-	public int getSize(){
-		return stack.getSize();
-	}
-	
-	/* Getters */
-	public Stack getStack() {
-		return stack;
-	}
 
 	public Stack getStackTmp() {
 		return stackTmp;
