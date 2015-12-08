@@ -45,6 +45,47 @@ public class Queue{
 		
 	}
 	
+	/**
+	 * Return the head int of the queue
+	 * @return int
+	 * @throws IllegalStateExceptio
+	 */
+	public int head(){
+		return stack.head();
+	}
+	
+	/**
+	 * Return the number of elements in the queue
+	 * @return number of elements
+	 */
+	public int getNumberOfElements(){
+		return stack.getNumberOfElements();
+	}
+	
+	/**
+	 * Check is the queue is empty
+	 * @return boolean
+	 */
+	public boolean isEmpty(){
+		return stack.isEmpty();
+	}
+	
+	/**
+	 * Check is the queue is full
+	 * @return boolean
+	 */
+	public boolean isFull(){
+		return stack.isFull();
+	}
+	
+	public Integer[] getStackArray() {
+		return stack.getStackArray();
+	}
+	
+	public int getSize(){
+		return stack.getSize();
+	}
+	
 	/* Getters */
 	public Stack getStack() {
 		return stack;

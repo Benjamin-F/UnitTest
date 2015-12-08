@@ -34,9 +34,9 @@ public class QueueTest {
 	@Test
 	public void testPush(){
 		myQueue.push(5);
-		assertEquals(false, myQueue.getStack().isEmpty());
-		assertEquals(1, myQueue.getStack().getNumberOfElements());
-		assertEquals(5, myQueue.getStack().head());
+		assertEquals(false, myQueue.isEmpty());
+		assertEquals(1, myQueue.getNumberOfElements());
+		assertEquals(5, myQueue.head());
 	}
 	
 	
@@ -63,7 +63,7 @@ public class QueueTest {
 		myQueue.pop();
 		myQueue.pop();
 		
-		assertEquals(true, myQueue.getStack().isEmpty());
+		assertEquals(true, myQueue.isEmpty());
 		assertEquals(true, myQueue.getStackTmp().isEmpty());
 	}
 	
@@ -76,7 +76,8 @@ public class QueueTest {
 		myQueue.push(2);
 		myQueue.pop();
 		
-		assertEquals(2, (int)myQueue.getStack().getStackArray()[0]);
-		assertEquals(1, (int)myQueue.getStack().getNumberOfElements());
+		assertEquals(2, (int)myQueue.getStackArray()[0]);
+		assertEquals(1, (int)myQueue.getNumberOfElements());
+		assertEquals(true, myQueue.getStackTmp().isEmpty());
 	}
 }
